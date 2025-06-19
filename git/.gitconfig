@@ -30,7 +30,7 @@
 	interHunkContext = 10
 
 [commit]
-	template = ~/.config/git/template
+	template = ~/dotfiles/git/template
 
 [log]
 	abbrevCommit = true
@@ -46,7 +46,7 @@
 	singlekey = true
 
 [include]
-	path = ~/.config/git/delta/themes.gitconfig
+	path = ~/dotfiles/git/delta/themes.gitconfig
 
 [delta]
 	features = chameleon
