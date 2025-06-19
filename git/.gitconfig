@@ -1,6 +1,10 @@
 [init]
 	defaultBranch = main
 
+[user]
+	name = Gustavo Nazario Perez
+	email = gustavonazario27@gmail.com
+
 [core]
 	editor = nvim
 	preloadindex = true
