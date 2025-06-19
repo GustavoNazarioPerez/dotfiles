@@ -1,0 +1,34 @@
+format = """
+$directory\
+$git_branch\
+$rust\
+$golang\
+$python\
+\n$character"""
+
+[directory]
+style = "fg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 255
+truncate_to_repo = false
+use_logical_path = false
+
+[git_branch]
+symbol = ""
+style = "fg:#638dbf"
+format = "[[ $symbol $branch ](fg:#638dbf)]($style)"
+
+[golang]
+symbol = ""
+style = "fg:#212736"
+format = "[[ $symbol ](fg:#769ff0)]($style)"
+
+[python]
+symbol = ""
+style = "fg:#212736"
+format = "[[ $symbol $version ($virtualenv) ](fg:#769ff0)]($style)"
+
+[character]
+format = "$symbol "
+success_symbol = "[](italic #769ff0)"
+error_symbol = "[](italic red)"
