@@ -25,13 +25,13 @@ return {
 		build = ":TSUpdate",
 	},
 
-	  -- Status line
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
+	-- Status line
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 
-  -- Git integration
+	-- Git integration
 	{
 		"lewis6991/gitsigns.nvim",
 	},
