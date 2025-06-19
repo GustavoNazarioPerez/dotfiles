@@ -101,6 +101,50 @@ fi
 print_step "Installing Neovim plugins..."
 nvim --headless "+Lazy! sync" +qa
 
+# Define fonts to install
+print_step "Installing fonts..."
+font_packages=(
+    "font-fira-code"
+    "font-sf-mono-nerd-font-ligaturized"
+)
+
+# Install fonts
+for font in "${font_packages[@]}"; do
+    if brew list --cask "$font" &>/dev/null; then
+        print_success "$font already installed"
+    else
+        print_step "Installing $font..."
+        if brew install --cask "$font"; then
+            print_success "$font installed successfully"
+        else
+            print_error "Failed to install $font"
+        fi
+    fi
+done
+
+# Verify installations
+print_step "Verifying font installations..."
+
+# Check using fc-list (if available)
+if command -v fc-list &> /dev/null; then
+    echo
+    echo "Checking installed fonts:"
+
+    if fc-list | grep -qi "fira.*code"; then
+        print_success "Fira Code detected in system fonts"
+    else
+        print_warning "Fira Code not detected (may need system restart)"
+    fi
+    
+    if fc-list | grep -qi "sf.*mono.*nerd"; then
+        print_success "SF Mono Nerd Font detected in system fonts"
+    else
+        print_warning "SF Mono Nerd Font not detected (may need system restart)"
+    fi
+else
+    print_warning "fc-list not available, skipping font verification"
+fi
+
 # Final setup
 print_step "Running final setup..."
 brew cleanup
