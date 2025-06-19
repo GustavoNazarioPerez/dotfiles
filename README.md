@@ -7,5 +7,3 @@ You can find my configuration for the following:
 - starship: better command line prompt
 - git: presets, make diff better!
 - .zshrc
-
-Note: I should probably include a setup script to install dependencies for this
