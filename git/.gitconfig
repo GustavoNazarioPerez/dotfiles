@@ -1,0 +1,48 @@
+[init]
+	defaultBranch = main
+
+[core]
+	editor = nvim
+	preloadindex = true
+	pager = delta
+
+[pull]
+	default = current
+	rebase = true
+
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+[diff]
+	colorMoved = no
+	context = 5
+	renames = copies
+	interHunkContext = 10
+
+[commit]
+	template = ~/.config/git/template
+
+[log]
+	abbrevCommit = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[merge]
+	conflictstyle = diff3
+
+[interactive]
+	singlekey = true
+
+[include]
+	path = ~/.config/git/delta/themes.gitconfig
+
+[delta]
+	features = chameleon
